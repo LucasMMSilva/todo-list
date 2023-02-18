@@ -1,0 +1,96 @@
+/* Configurações gerais */
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap');
+*{
+    font-family: 'PT Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+/* Content */
+.header{
+    text-align: center;
+}
+.header hr{
+    width: 120px;
+    margin: -5px auto 10px auto;
+    border: solid rgb(7, 161, 76) 2px;
+    border-radius: 25px;
+    
+}
+.content{
+        width: 400px;    
+        margin: 50px auto;
+        padding: 10px;
+        background-color: white;
+        border-radius: 5px;
+}
+.addTask form{
+    display: grid;
+    grid-template-columns: 1fr 90px;
+}
+.addTask form input{
+    margin: 2px;
+    padding: 5px 5px;
+}
+.addTask form input[type=submit]{
+    background-color: rgb(8, 66, 224);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 2px;
+}
+/*Filtro*/
+.filter{
+    padding: 5px 0;
+    margin-bottom: 10px;
+}
+.filter a{
+    color: black;
+    text-decoration: none;
+    padding: 2px 8px;
+    border-radius: 10px;
+}
+.filter a:hover{
+    background-color: rgb(194, 211, 224);
+}
+.filter i{
+    margin-right: 5px;
+}
+.task{
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+}
+.task form{
+    display: inline;
+}
+.task form button{
+    border: none;
+    background-color: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+.todoList hr{
+    height: 1px;
+    background: #bbb;
+    border: none;
+    background-image: -webkit-linear-gradient(left, #ffffff, #aaaaaa, #ffffff);
+    background-image: -moz-linear-gradient(left, #ffffff, #aaaaaa, #ffffff);
+    background-image: -ms-linear-gradient(left, #ffffff, #aaaaaa, #ffffff);
+    background-image: -o-linear-gradient(left, #ffffff, #aaaaaa, #ffffff);
+}
+.todoList hr:last-child{
+    display: none;
+}
+.check{
+    color: rgb(8, 66, 224);
+}
+    .checked{
+        color: grey;
+        text-decoration: line-through;
+    }
+.edit{
+    color: rgb(0, 150, 0);
+}
+.delete{
+    color: rgb(224, 8, 44);
+}

@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="../css/style.css">
+<div class="content">
+    <div class="header">
+        <h1>TODO LIST</h1>
+        <hr>
+    </div>
+    <div class="addTask">
+        <form action="/createnewtask" method="post">
+            <input type="text" name="title" id="title" placeholder="Adicionar nova tarefa...">
+            <input type="submit" value="Adicionar">
+        </form>
+    </div>
+    <div class="filter"><i class="bi bi-sliders2">Filtrar</i>
+    <a href="/">Todos</a>
+    <a href="/filter/complete">Concluidos</a>
+    <a href="/filter/todo">Afazer</a>
+    </div>
+    {{url}}
+    <div class="todoList">
+        {{#each list}}
+            <div class="task">
+                <div>
+                    <form action="/check" method="post">
+                        <input type="hidden" name="url" value="{{this.url}}">
+                        <input type="hidden" name="id" value="{{this.id}}">
+                        <input type="hidden" name="done" value="{{this.done}}">
+                        <button type="submit"><i class="bi {{#if this.done}}bi-check-square-fill check{{else}}bi-square{{/if}}"></i></button>
+                    </form>
+                    <label class="{{#if this.done}}checked{{/if}}">{{this.title}}</label>
+                </div>
+                <div>
+                    <form action="/edit" method="post">
+                        <input type="hidden" name="url" value="{{this.url}}">
+                        <input type="hidden" name="id" value="{{this.id}}">
+                        <button type="submit"><i class="edit bi bi-pencil-square"></i></button>
+                    </form>
+                    <form action="/delete" method="post">
+                        <input type="hidden" name="url" value="{{this.url}}">
+                        <input type="hidden" name="id" value="{{this.id}}">
+                        <button type="submit"><i class="delete bi bi-trash3"></i></button>
+                    </form>
+                </div>
+            </div>
+            <hr>
+        {{/each}}
+    </div>
+</div>
